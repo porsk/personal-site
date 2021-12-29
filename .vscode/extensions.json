@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"christian-kohler.npm-intellisense",
+		"esbenp.prettier-vscode",
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"waderyan.gitblame",
+		"christian-kohler.path-intellisense",
+		"dbaeumer.vscode-eslint"
+	]
+}
