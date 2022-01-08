@@ -8,6 +8,7 @@ type AppContextType = {
 		mode: PaletteMode;
 		toggleMode: () => void;
 		setMode: (mode: PaletteMode) => void;
+		isDark: () => boolean;
 	};
 };
 
@@ -18,6 +19,7 @@ export const AppContext = createContext<AppContextType>({
 		mode: 'light',
 		toggleMode: () => {},
 		setMode: () => {},
+		isDark: () => false,
 	},
 });
 
@@ -46,12 +48,15 @@ export const AppProvider: FC = ({ children }) => {
 		setMode(currentMode === 'light' ? 'dark' : 'light');
 	};
 
+	const isDark = () => currentMode === 'dark';
+
 	const value = useMemo(
 		() => ({
 			theme: {
 				mode: currentMode,
 				toggleMode,
 				setMode,
+				isDark,
 			},
 		}),
 		[currentMode]

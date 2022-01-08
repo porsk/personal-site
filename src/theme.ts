@@ -3,9 +3,9 @@ import { PaletteMode } from '@mui/material';
 export default (mode: PaletteMode) => ({
 	palette: {
 		primary: {
-			main: '#bdbdbd',
-			light: '#efefef',
-			dark: '#8d8d8d',
+			main: '#007bff',
+			light: '#69a9ff',
+			dark: '#0050cb',
 		},
 		secondary: {
 			main: '#2196f3',
@@ -15,15 +15,32 @@ export default (mode: PaletteMode) => ({
 		mode,
 		...(mode === 'light'
 			? {
-					// palette values for light mode
+					background: {
+						default: '#fefefe',
+					},
 			  }
 			: {
-					// palette values for dark mode
-
 					background: {
-						default: '#303030',
-						paper: '#424242',
+						default: '#171c28',
+					},
+					text: {
+						primary: '#e7e7e7',
+						secondary: '#afafbf',
 					},
 			  }),
+	},
+	components: {
+		...(mode === 'dark' && {
+			MuiAppBar: {
+				styleOverrides: {
+					root: {
+						backgroundImage: 'none',
+					},
+					colorInherit: {
+						backgroundColor: '#171c28',
+					},
+				},
+			},
+		}),
 	},
 });

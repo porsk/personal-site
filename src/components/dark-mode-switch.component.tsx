@@ -1,20 +1,22 @@
 import { useContext, FC } from 'react';
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 
-import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 
 import { AppContext } from '../providers/app.provider';
 
 const DarkModeSwitch: FC = () => {
 	const {
-		theme: { mode, toggleMode },
+		theme: { toggleMode, isDark },
 	} = useContext(AppContext);
 
 	return (
-		<IconButton onClick={() => toggleMode()} color="inherit">
-			{mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-		</IconButton>
+		<Tooltip title={isDark() ? 'Light mode' : 'Dark mode'}>
+			<IconButton onClick={() => toggleMode()}>
+				{isDark() ? <Brightness7Icon /> : <NightlightRoundIcon />}
+			</IconButton>
+		</Tooltip>
 	);
 };
 
