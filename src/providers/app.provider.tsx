@@ -29,7 +29,10 @@ export const AppProvider: FC = ({ children }) => {
 	// See: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
-	const getDefaultMode = (cookieMode: PaletteMode, prefersDark: boolean) => {
+	const getDefaultMode = (
+		cookieMode: PaletteMode,
+		prefersDark: boolean
+	): PaletteMode => {
 		if (cookieMode) return cookieMode;
 
 		return prefersDark ? 'dark' : 'light';
@@ -48,7 +51,7 @@ export const AppProvider: FC = ({ children }) => {
 		setMode(currentMode === 'light' ? 'dark' : 'light');
 	};
 
-	const isDark = () => currentMode === 'dark';
+	const isDark = (): boolean => currentMode === 'dark';
 
 	const value = useMemo(
 		() => ({
