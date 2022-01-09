@@ -1,4 +1,4 @@
-name: Lint CI
+name: Analysis CI
 
 on: push
 
@@ -9,7 +9,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: Install modules
+            - name: Install Node modules
               run: npm ci
 
             - name: Run ESLint
@@ -20,8 +20,8 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: Install modules
+            - name: Install Node modules
               run: npm ci
 
-            - name: Run ESLint
+            - name: Build React.js project
               run: npm run build
