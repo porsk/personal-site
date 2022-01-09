@@ -1,0 +1,27 @@
+name: Analysis CI
+
+on: push
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Node modules
+              run: npm ci
+
+            - name: Run ESLint
+              run: npm run lint
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Node modules
+              run: npm ci
+
+            - name: Build React.js project
+              run: npm run build
