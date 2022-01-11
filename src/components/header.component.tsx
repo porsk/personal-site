@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
-
-import { AppBar, Toolbar, Slide, Stack, useScrollTrigger } from '@mui/material';
 import { css } from '@emotion/react';
+import { AppBar, Toolbar, Slide, Stack, useScrollTrigger } from '@mui/material';
 
 import DarkModeSwitch from './dark-mode-switch.component';
 
