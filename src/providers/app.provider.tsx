@@ -16,10 +16,10 @@ const PALETTE_MODE_COOKIE_NAME = 'paletteMode';
 
 export const AppContext = createContext<AppContextType>({
 	theme: {
-		mode: 'light',
+		mode: 'dark',
 		toggleMode: () => {},
 		setMode: () => {},
-		isDark: () => false,
+		isDark: () => true,
 	},
 });
 

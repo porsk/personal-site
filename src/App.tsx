@@ -13,6 +13,7 @@ import { AppContext } from './providers/app.provider';
 import getTheme from './theme';
 import Header from './components/header.component';
 import Footer from './components/footer.component';
+import Greeting from './components/greeting.component';
 
 const containerStyle = css({
 	padding: 24,
@@ -33,7 +34,11 @@ const App = () => {
 				<CookiesProvider>
 					<div>
 						<CssBaseline />
+
 						<Header />
+
+						<Greeting />
+
 						<Container css={containerStyle}>
 							<Typography variant="h3">
 								Not much to see here yet.
