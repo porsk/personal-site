@@ -16,7 +16,7 @@ export default (mode: PaletteMode) => ({
 		...(mode === 'light'
 			? {
 					background: {
-						default: '#fefefe',
+						default: '#fcfcfc',
 					},
 			  }
 			: {
@@ -30,17 +30,15 @@ export default (mode: PaletteMode) => ({
 			  }),
 	},
 	components: {
-		...(mode === 'dark' && {
-			MuiAppBar: {
-				styleOverrides: {
-					root: {
-						backgroundImage: 'none',
-					},
-					colorInherit: {
-						backgroundColor: '#171c28',
-					},
+		MuiAppBar: {
+			styleOverrides: {
+				root: {
+					backgroundImage: 'none',
+				},
+				colorInherit: {
+					backgroundColor: mode === 'light' ? '#fcfcfc' : '#171c28',
 				},
 			},
-		}),
+		},
 	},
 });
