@@ -1,12 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Container, Typography, Avatar, Grid } from '@mui/material';
+import {
+	Container,
+	Typography,
+	Avatar,
+	Grid,
+	Button,
+	Hidden,
+} from '@mui/material';
 import { FC } from 'react';
 
 const containerStyle = (theme: any) =>
 	css({
 		marginTop: theme.spacing(14),
-		marginBottom: theme.spacing(14),
+		marginBottom: theme.spacing(20),
 		[theme.breakpoints.down('md')]: {
 			marginTop: theme.spacing(8),
 			marginBottom: theme.spacing(8),
@@ -75,7 +82,18 @@ const Greeting: FC = () => (
 					across the whole stack, spiced with a great deal of
 					enthusiasm towards DevOps and Kubernetes.
 				</Typography>
+
+				<Hidden mdDown>
+					<Button
+						variant="outlined"
+						size="large"
+						sx={{ marginTop: 3 }}
+					>
+						Get in touch
+					</Button>
+				</Hidden>
 			</Grid>
+
 			<Grid item xs={12} md css={avatarContainerStyle}>
 				<Avatar
 					alt="Remy Sharp"
