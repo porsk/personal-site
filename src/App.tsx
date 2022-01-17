@@ -14,11 +14,14 @@ import getTheme from './theme';
 import Header from './components/header.component';
 import Footer from './components/footer.component';
 import Greeting from './components/greeting.component';
+import About from './components/about.component';
 
 const containerStyle = css({
 	padding: 24,
 	textAlign: 'center',
-	height: '100vh',
+	justifyContent: 'center',
+	marginTop: '25vh',
+	marginBottom: '25vh',
 });
 
 const App = () => {
@@ -38,6 +41,8 @@ const App = () => {
 						<Header />
 
 						<Greeting />
+
+						<About />
 
 						<Container css={containerStyle}>
 							<Typography variant="h3">
