@@ -53,7 +53,7 @@ const Footer: FC = () => (
 		</Grid>
 
 		<Grid item xs={12}>
-			<Typography variant="subtitle2">
+			<Typography variant="subtitle2" color="text.secondary">
 				Designed &amp; Developed by Krisztián Patakfalvi
 			</Typography>
 		</Grid>

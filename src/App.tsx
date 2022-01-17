@@ -11,10 +11,12 @@ import { CookiesProvider } from 'react-cookie';
 
 import { AppContext } from './providers/app.provider';
 import getTheme from './theme';
+
 import Header from './components/header.component';
 import Footer from './components/footer.component';
 import Greeting from './components/greeting.component';
 import About from './components/about.component';
+import Skills from './components/skills.component';
 
 const containerStyle = css({
 	padding: 24,
@@ -44,13 +46,13 @@ const App = () => {
 
 						<About />
 
+						<Skills />
+
 						<Container css={containerStyle}>
 							<Typography variant="h3">
-								Not much to see here yet.
+								Under construction
 							</Typography>
-							<Typography variant="h4">
-								Something big is coming!
-							</Typography>
+							<Typography variant="h4">Coming soon</Typography>
 						</Container>
 						<Footer />
 					</div>
