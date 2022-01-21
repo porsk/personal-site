@@ -9,8 +9,10 @@ import {
 	ListItemText,
 	ListItemIcon,
 	Link,
+	Button,
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Section from './section.component';
 
 const periodContainerStyle = () =>
@@ -94,6 +96,20 @@ const Experiences = () => (
 					'Worked on a web based tool for speeding up the configuration of the telecommunication servers at Nokia using JavaScript, HTML and CSS.',
 				]}
 			/>
+
+			<Grid item xs={12}>
+				<Button
+					variant="outlined"
+					endIcon={<ChevronRightIcon />}
+					sx={{ textTransform: 'none' }}
+					color="inherit"
+					target="_blank"
+					rel="noopener noreferrer"
+					href={`${window.location.origin}/resume.pdf`}
+				>
+					View my Resume
+				</Button>
+			</Grid>
 		</Grid>
 	</Section>
 );
