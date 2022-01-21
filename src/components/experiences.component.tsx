@@ -21,6 +21,13 @@ const periodContainerStyle = () =>
 		justifyContent: 'flex-end',
 	});
 
+const resumeContainerStyle = (theme: any) =>
+	css({
+		[theme.breakpoints.down('sm')]: {
+			textAlign: 'center',
+		},
+	});
+
 const Experience: FC<{
 	employer: string;
 	url: string;
@@ -97,7 +104,7 @@ const Experiences = () => (
 				]}
 			/>
 
-			<Grid item xs={12}>
+			<Grid item xs={12} css={resumeContainerStyle}>
 				<Button
 					variant="outlined"
 					endIcon={<ChevronRightIcon />}
