@@ -17,6 +17,7 @@ import Footer from './components/footer.component';
 import Greeting from './components/greeting.component';
 import About from './components/about.component';
 import Skills from './components/skills.component';
+import Experiences from './components/experiences.component';
 
 const containerStyle = css({
 	padding: 24,
@@ -47,6 +48,8 @@ const App = () => {
 						<About />
 
 						<Skills />
+
+						<Experiences />
 
 						<Container css={containerStyle}>
 							<Typography variant="h3">

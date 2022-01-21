@@ -21,7 +21,9 @@ const SkillList: FC<{ title: string; items: string[] }> = ({
 				{title}
 			</Typography>
 			{items.map((item: string) => (
-				<Typography color="text.secondary">{item}</Typography>
+				<Typography key={item} color="text.secondary">
+					{item}
+				</Typography>
 			))}
 		</Stack>
 	</Grid>
