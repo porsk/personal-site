@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { FC } from 'react';
 import {
 	Grid,
@@ -6,29 +8,42 @@ import {
 	ListItem,
 	ListItemText,
 	ListItemIcon,
+	Link,
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Section from './section.component';
 
+const periodContainerStyle = () =>
+	css({
+		display: 'flex',
+		justifyContent: 'flex-end',
+	});
+
 const Experience: FC<{
 	employer: string;
+	url: string;
 	title: string;
 	period: string;
 	content: string[];
-}> = ({ employer, title, period, content }) => (
+}> = ({ employer, url, title, period, content }) => (
 	<Grid item xs={12}>
 		<Grid container>
 			<Grid item xs={6}>
-				<Typography variant="h6">{employer}</Typography>
-				<Typography variant="subtitle1" color="text.secondary">
+				<Link
+					variant="h6"
+					href={url}
+					color="text.primary"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{employer}
+				</Link>
+
+				<Typography variant="subtitle2" color="text.secondary">
 					{title}
 				</Typography>
 			</Grid>
-			<Grid
-				item
-				xs={6}
-				sx={{ display: 'flex', justifyContent: 'flex-end' }}
-			>
+			<Grid item xs={6} css={periodContainerStyle}>
 				<Typography variant="subtitle2" color="text.secondary">
 					{period}
 				</Typography>
@@ -36,7 +51,7 @@ const Experience: FC<{
 			<Grid item xs={12}>
 				<List dense>
 					{content.map((line) => (
-						<ListItem>
+						<ListItem key={line}>
 							<ListItemIcon>
 								<ArrowRightIcon />
 							</ListItemIcon>
@@ -56,10 +71,11 @@ const Experience: FC<{
 );
 
 const Experiences = () => (
-	<Section title="Experiences">
+	<Section title="Experience">
 		<Grid container rowSpacing={3}>
 			<Experience
 				employer="Codespring"
+				url="https://www.codespring.ro"
 				title="Full Stack Developer | DevOps Engineer"
 				period="Sep 2018 - Present"
 				content={[
@@ -71,6 +87,7 @@ const Experiences = () => (
 
 			<Experience
 				employer="Nokia"
+				url="https://www.nokia.com"
 				title="Intern - R&amp;D Engineer"
 				period="Jul - Sep 2017"
 				content={[
