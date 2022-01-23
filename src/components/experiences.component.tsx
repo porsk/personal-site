@@ -68,7 +68,7 @@ const Experience: FC<{
 								primary={line}
 								primaryTypographyProps={{
 									color: 'text.secondary',
-									variant: 'body2',
+									variant: 'body1',
 								}}
 							/>
 						</ListItem>

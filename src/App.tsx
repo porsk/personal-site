@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
-import { css, ThemeProvider as EmotionThemeProvider } from '@emotion/react';
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import { useContext } from 'react';
-import { CssBaseline, Typography, Container } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import {
 	createTheme,
 	ThemeProvider as MuiThemeProvider,
@@ -19,14 +18,7 @@ import About from './components/about.component';
 import Skills from './components/skills.component';
 import Experiences from './components/experiences.component';
 import Projects from './components/projects.component';
-
-const containerStyle = css({
-	padding: 24,
-	textAlign: 'center',
-	justifyContent: 'center',
-	marginTop: '25vh',
-	marginBottom: '25vh',
-});
+import Contact from './components/contact.component';
 
 const App = () => {
 	const {
@@ -54,12 +46,8 @@ const App = () => {
 
 						<Projects />
 
-						<Container css={containerStyle}>
-							<Typography variant="h3">
-								Under construction
-							</Typography>
-							<Typography variant="h4">Coming soon</Typography>
-						</Container>
+						<Contact />
+
 						<Footer />
 					</div>
 				</CookiesProvider>

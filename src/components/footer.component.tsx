@@ -10,7 +10,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const containerStyle = (theme: any) =>
 	css({
-		padding: theme.spacing(4),
+		padding: theme.spacing(5),
 		textAlign: 'center',
 	});
 
