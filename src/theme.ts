@@ -1,5 +1,17 @@
 import { PaletteMode } from '@mui/material';
 
+const COLORS = {
+	LIGHT: {
+		BACKGROUND: '#fcfcfc',
+	},
+	DARK: {
+		BACKGROUND: '#171c28',
+	},
+};
+
+const getBackgroundColor = (mode: PaletteMode) =>
+	mode === 'light' ? COLORS.LIGHT.BACKGROUND : COLORS.DARK.BACKGROUND;
+
 export default (mode: PaletteMode) => ({
 	palette: {
 		primary: {
@@ -16,12 +28,12 @@ export default (mode: PaletteMode) => ({
 		...(mode === 'light'
 			? {
 					background: {
-						default: '#fcfcfc',
+						default: COLORS.LIGHT.BACKGROUND,
 					},
 			  }
 			: {
 					background: {
-						default: '#171c28',
+						default: COLORS.DARK.BACKGROUND,
 					},
 					text: {
 						primary: '#e7e7e7',
@@ -36,7 +48,25 @@ export default (mode: PaletteMode) => ({
 					backgroundImage: 'none',
 				},
 				colorInherit: {
-					backgroundColor: mode === 'light' ? '#fcfcfc' : '#171c28',
+					backgroundColor: getBackgroundColor(mode),
+				},
+			},
+		},
+		MuiCssBaseline: {
+			styleOverrides: {
+				body: {
+					'::-webkit-scrollbar': {
+						width: 12,
+					},
+
+					'::-webkit-scrollbar-track': {
+						background: getBackgroundColor(mode),
+					},
+
+					'::-webkit-scrollbar-thumb': {
+						background: '#888',
+						borderRadius: 12,
+					},
 				},
 			},
 		},
