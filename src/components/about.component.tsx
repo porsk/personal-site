@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import Section from './section.component';
 
 const About = () => (
-	<Section title="About me">
+	<Section title="About me" id="about">
 		<Typography color="text.secondary">
 			Hello! My name is Krisztián Patakfalvi, feel free to
 			<strong> call me Chris</strong>. Currently,

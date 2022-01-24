@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react';
+import { FC } from 'react';
 import { Zoom, Box, useScrollTrigger, Fab, Tooltip } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
@@ -8,10 +8,8 @@ const ScrollTop: FC = () => {
 		threshold: 500,
 	});
 
-	const scrollToTop = (event: MouseEvent<HTMLDivElement>) => {
-		const anchor = (
-			(event.target as HTMLDivElement).ownerDocument || document
-		).querySelector('#back-to-top-anchor');
+	const scrollToTop = () => {
+		const anchor = document.querySelector('#back-to-top-anchor');
 
 		if (anchor) {
 			anchor.scrollIntoView({
@@ -24,7 +22,7 @@ const ScrollTop: FC = () => {
 	return (
 		<Zoom in={trigger}>
 			<Box
-				onClick={(event) => scrollToTop(event)}
+				onClick={() => scrollToTop()}
 				role="presentation"
 				sx={{ position: 'fixed', bottom: 16, right: 16 }}
 			>

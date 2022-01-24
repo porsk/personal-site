@@ -46,7 +46,7 @@ const Project: FC<{
 );
 
 const Projects = () => (
-	<Section title="My projects">
+	<Section title="My projects" id="projects">
 		<Grid container rowSpacing={3}>
 			<Project
 				name="Personal site"

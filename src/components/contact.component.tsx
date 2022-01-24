@@ -8,6 +8,7 @@ const Contact = () => (
 	<Container
 		maxWidth="md"
 		sx={{ textAlign: 'center', paddingTop: 12, paddingBottom: 12 }}
+		id="contact"
 	>
 		<Grid container rowSpacing={4}>
 			<Grid item xs={12}>

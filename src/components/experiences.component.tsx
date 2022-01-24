@@ -80,7 +80,7 @@ const Experience: FC<{
 );
 
 const Experiences = () => (
-	<Section title="Experience">
+	<Section title="Experience" id="experience">
 		<Grid container rowSpacing={3}>
 			<Experience
 				employer="Codespring"
