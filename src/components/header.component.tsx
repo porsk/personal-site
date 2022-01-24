@@ -7,8 +7,9 @@ import {
 	Slide,
 	Stack,
 	Button,
-	useScrollTrigger,
 	Divider,
+	Hidden,
+	useScrollTrigger,
 	useTheme,
 } from '@mui/material';
 
@@ -68,10 +69,14 @@ const Header: FC = () => {
 					<Toolbar>
 						<Stack direction="row" spacing={2} css={stackStyle}>
 							<MenuButton title="About" />
-							<MenuButton title="Skills" />
+							<Hidden smDown>
+								<MenuButton title="Skills" />
+							</Hidden>
 							<MenuButton title="Experience" />
 							<MenuButton title="Projects" />
-							<MenuButton title="Contact" />
+							<Hidden smDown>
+								<MenuButton title="Contact" />
+							</Hidden>
 
 							<Divider orientation="vertical" flexItem />
 
