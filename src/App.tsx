@@ -19,6 +19,7 @@ import Skills from './components/skills.component';
 import Experiences from './components/experiences.component';
 import Projects from './components/projects.component';
 import Contact from './components/contact.component';
+import ScrollTop from './components/scroll-top.component';
 
 const App = () => {
 	const {
@@ -49,6 +50,8 @@ const App = () => {
 						<Contact />
 
 						<Footer />
+
+						<ScrollTop />
 					</div>
 				</CookiesProvider>
 			</EmotionThemeProvider>

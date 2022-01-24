@@ -10,8 +10,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const containerStyle = (theme: any) =>
 	css({
-		padding: theme.spacing(5),
 		textAlign: 'center',
+		paddingTop: theme.spacing(4),
+		paddingBottom: theme.spacing(4),
+		[theme.breakpoints.down('sm')]: {
+			paddingTop: theme.spacing(8),
+			paddingBottom: theme.spacing(8),
+		},
 	});
 
 const SocialButton: FC<{ icon: ReactNode; url: string }> = ({ icon, url }) => (

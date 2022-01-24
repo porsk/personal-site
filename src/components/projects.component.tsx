@@ -31,9 +31,8 @@ const Project: FC<{
 			<Grid item xs={12}>
 				<Grid container spacing={1}>
 					{tags.map((tag) => (
-						<Grid item>
+						<Grid item key={tag}>
 							<Chip
-								key={tag}
 								label={tag}
 								variant="outlined"
 								color="primary"
