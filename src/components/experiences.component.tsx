@@ -68,7 +68,7 @@ const Experience: FC<{
 								primary={line}
 								primaryTypographyProps={{
 									color: 'text.secondary',
-									variant: 'body2',
+									variant: 'body1',
 								}}
 							/>
 						</ListItem>
@@ -80,7 +80,7 @@ const Experience: FC<{
 );
 
 const Experiences = () => (
-	<Section title="Experience">
+	<Section title="Experience" id="experience">
 		<Grid container rowSpacing={3}>
 			<Experience
 				employer="Codespring"

@@ -30,7 +30,7 @@ const SkillList: FC<{ title: string; items: string[] }> = ({
 );
 
 const Skills = () => (
-	<Section title="Skills">
+	<Section title="Skills" id="skills">
 		<Grid container rowSpacing={3}>
 			<SkillList
 				title="Languages"
