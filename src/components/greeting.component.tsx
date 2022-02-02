@@ -96,8 +96,8 @@ const Greeting: FC = () => (
 
 			<Grid item xs={12} md css={avatarContainerStyle}>
 				<Avatar
-					alt="Remy Sharp"
-					src={`${window.location.origin}/android-chrome-512x512.png`}
+					alt="Krisztián Patakfalvi"
+					src={`${window.location.origin}/android-chrome-300x300.avif`}
 					css={avatarStyle}
 				/>
 			</Grid>
