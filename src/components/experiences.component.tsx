@@ -83,10 +83,22 @@ const Experiences = () => (
 	<Section title="Experience" id="experience">
 		<Grid container rowSpacing={3}>
 			<Experience
+				employer="Sora (through Toptal)"
+				url="https://www.sora.co/"
+				title="Full Stack Developer | Integration Engineer"
+				period="April 2022 - Present"
+				content={[
+					'Integration of new 3rd party systems into the application (Twilio, Teams, Checkr and others).',
+					'Improvement and maintenance of existing integrations.',
+					'Development of UI and backend features and improvements.',
+				]}
+			/>
+
+			<Experience
 				employer="Codespring"
 				url="https://www.codespring.ro"
 				title="Full Stack Developer | DevOps Engineer"
-				period="Sep 2018 - Present"
+				period="Sep 2018 - June 2022"
 				content={[
 					'Development of web applications, backends, microservice systems dealing with IoT events and big data, native Android applications.',
 					'Work with a variety of different languages, platforms, frameworks, and tools such as Node, React, Java, Spring, Python, Kafka TimescaleDB, MongoDB, PostgreSQL, Kubernetes, Rancher.',
