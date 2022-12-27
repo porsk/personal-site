@@ -23,7 +23,9 @@ export const AppContext = createContext<AppContextType>({
 	},
 });
 
-export const AppProvider: FC = ({ children }) => {
+export const AppProvider: FC<{ children: React.ReactNode }> = ({
+	children,
+}) => {
 	const [cookies, setCookie] = useCookies([PALETTE_MODE_COOKIE_NAME]);
 	// using prefers-color-scheme query for getting user specified a preference
 	// See: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
