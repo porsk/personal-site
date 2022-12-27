@@ -5,36 +5,45 @@ import Section from './section.component';
 const About = () => (
 	<Section title="About me" id="about">
 		<Typography color="text.secondary">
-			Hello! My name is Krisztián Patakfalvi, feel free to
-			<strong> call me Chris</strong>. Currently,
-			<strong> I work as a Full Stack Developer</strong> for an
-			outsourcing company in Cluj-Napoca, helping clients bring their
-			digital products to life.
+			Hello! 👋 My name is Krisztián Patakfalvi, feel free to
+			<strong> call me Chris</strong>. I&apos;ve always been a great
+			problem solver, a traveler, and a technophile obsessed with the
+			latest devices. Today, I&apos;m working as a{' '}
+			<strong>Full-Stack Developer through Toptal</strong>, while
+			traveling the world as a <strong>digital nomad</strong>, following
+			and fulfilling my passions and dreams.
 		</Typography>
 
 		<br />
 
 		<Typography color="text.secondary">
-			What can a “Full Stack Developer” do, you might ask? I can craft a
-			website from nothing into existence, fully formed. I do not use
-			tricks, nor is this magic. I can also build complex systems hiding
-			in the background serving websites, handling user interaction,
-			dealing with big data or IoT events. I can plan, design, build,
-			launch, and maintain all these by myself —
+			What can a <q>Full Stack Developer</q> do, you might ask? I can
+			craft a website from nothing into existence, fully formed. I do not
+			use tricks, nor is this magic. I can build systems that hide in the
+			background, serve websites, manage user interactions, deal with big
+			data or IoT events.{' '}
+			<strong>I can plan, design, build, launch, and maintain </strong>
+			all these by myself —
 			<strong> did I mention that I do DevOps too?</strong>
 		</Typography>
 
 		<br />
 
 		<Typography color="text.secondary">
-			My interest in programming started back in 2011 when I wrote my very
-			first program printing out “Hello Krisztián!”. It was almost magic,
-			being able to get the computer to do whatever I wanted, just by
-			tying in the right symbols. Fast-forward to today, and I&apos;ve had
-			the privilege of working on various challenging projects in{' '}
+			I started learning to code when I was a teenager. I still remember
+			sitting in front of the computer, making it print{' '}
+			<q>Hello Krisztián</q> for the very first time. As I learned new
+			things it was almost magic, being able to get the computer to do
+			whatever I wanted, just by typing in the right <q>spells</q>. Since
+			then, I&apos;ve worked on countless challenging projects and have
+			been involved in the fields of{' '}
+			<strong>telecommunication, safety, IoT, and mobile industry</strong>
+			, handling{' '}
 			<strong>
-				telecommunication, safety, IoT, mobile and other industries.
+				requirements engineering, solution architecting, DevOps,
+				back-end and front-end development
 			</strong>
+			.
 		</Typography>
 
 		<br />
@@ -43,11 +52,12 @@ const About = () => (
 			I consider myself a well-organized person, a problem solver with
 			high attention to details.{' '}
 			<strong>
-				Fan of photographing, outdoor activities, music and board games.
+				Fan of photographing, outdoor activities, traveling, music and
+				board games.
 			</strong>{' '}
 			When I&apos;m not in front of a computer screen, I&apos;m probably
-			hanging out with friends or crossing off another item on my bucket
-			list.
+			hanging out with my love and friends or crossing off another item on
+			my bucket list.
 		</Typography>
 	</Section>
 );
