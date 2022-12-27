@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, Typography, Grid } from '@mui/material';
 
-const Section: FC<{ title: string; id: string }> = ({
+const Section: FC<{ title: string; children: React.ReactNode; id: string }> = ({
 	title,
 	children,
 	id,
