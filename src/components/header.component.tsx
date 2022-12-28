@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 import {
 	AppBar,
 	Toolbar,
@@ -10,44 +10,23 @@ import {
 	Divider,
 	Hidden,
 	useScrollTrigger,
-	useTheme,
 } from '@mui/material';
 
 import DarkModeSwitch from './dark-mode-switch.component';
+import useScrollToSection from '../hooks/useScrollToSection';
 
 const stackStyle = css({
 	marginLeft: 'auto',
 });
 
 const MenuButton: FC<{ title: string }> = ({ title }) => {
-	const theme = useTheme();
-
-	const scrollToSection = useCallback(() => {
-		const anchor = document.querySelector(
-			`#${title.toLowerCase()}`
-		) as HTMLElement;
-
-		if (anchor) {
-			const currentPosition = window.scrollY;
-			let targetPosition = anchor.offsetTop;
-
-			// when scrolling down -> needs and offset for the header
-			if (targetPosition < currentPosition) {
-				targetPosition -= Number(theme.mixins.toolbar.minHeight) ?? 0;
-			}
-
-			window.scrollTo({
-				top: targetPosition,
-				behavior: 'smooth',
-			});
-		}
-	}, []);
+	const { scrollToSection } = useScrollToSection();
 
 	return (
 		<Button
 			color="inherit"
 			sx={{ textTransform: 'none' }}
-			onClick={scrollToSection}
+			onClick={() => scrollToSection(title)}
 		>
 			{title}
 		</Button>

@@ -51,7 +51,7 @@ const Projects = () => (
 			<Project
 				name="Personal site"
 				url="https://pkrisztian.com"
-				description="Portfolio site serving as a modern-day CV designed and coded from sratch to showcase my skills and past work."
+				description="Portfolio site serving as a modern-day CV designed and coded from scratch to showcase my skills and past work."
 				tags={[
 					'Node.js',
 					'React.js',
