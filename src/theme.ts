@@ -30,7 +30,7 @@ export default (mode: PaletteMode) => ({
 					background: {
 						default: COLORS.LIGHT.BACKGROUND,
 					},
-			  }
+				}
 			: {
 					background: {
 						default: COLORS.DARK.BACKGROUND,
@@ -39,9 +39,17 @@ export default (mode: PaletteMode) => ({
 						primary: '#e7e7e7',
 						secondary: '#afafbf',
 					},
-			  }),
+				}),
 	},
 	components: {
+		// keep the MUI 5 spacing between list bullets and text
+		MuiListItemIcon: {
+			styleOverrides: {
+				root: {
+					minWidth: 56,
+				},
+			},
+		},
 		MuiAppBar: {
 			styleOverrides: {
 				root: {

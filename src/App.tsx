@@ -6,9 +6,8 @@ import {
 	ThemeProvider as MuiThemeProvider,
 	responsiveFontSizes,
 } from '@mui/material/styles';
-import { CookiesProvider } from 'react-cookie';
 
-import { AppContext } from './providers/app.provider';
+import { AppContext } from './providers/app.context';
 import getTheme from './theme';
 
 import Header from './components/header.component';
@@ -31,29 +30,27 @@ const App = () => {
 	return (
 		<MuiThemeProvider theme={theme}>
 			<EmotionThemeProvider theme={theme}>
-				<CookiesProvider>
-					<div>
-						<CssBaseline />
+				<div>
+					<CssBaseline />
 
-						<Header />
+					<Header />
 
-						<Greeting />
+					<Greeting />
 
-						<About />
+					<About />
 
-						<Skills />
+					<Skills />
 
-						<Experiences />
+					<Experiences />
 
-						<Projects />
+					<Projects />
 
-						<Contact />
+					<Contact />
 
-						<Footer />
+					<Footer />
 
-						<ScrollTop />
-					</div>
-				</CookiesProvider>
+					<ScrollTop />
+				</div>
 			</EmotionThemeProvider>
 		</MuiThemeProvider>
 	);

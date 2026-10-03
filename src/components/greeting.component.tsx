@@ -1,17 +1,10 @@
-/** @jsxImportSource @emotion/react */
+import type { Theme } from '@mui/material/styles';
 import { css } from '@emotion/react';
-import {
-	Container,
-	Typography,
-	Avatar,
-	Grid,
-	Button,
-	Hidden,
-} from '@mui/material';
+import { Container, Typography, Avatar, Grid, Button } from '@mui/material';
 import { FC } from 'react';
 import useScrollToSection from '../hooks/useScrollToSection';
 
-const containerStyle = (theme: any) =>
+const containerStyle = (theme: Theme) =>
 	css({
 		marginTop: theme.spacing(14),
 		marginBottom: theme.spacing(20),
@@ -27,7 +20,7 @@ const textStyle = () =>
 		lineHeight: 1.5,
 	});
 
-const avatarContainerStyle = (theme: any) =>
+const avatarContainerStyle = (theme: Theme) =>
 	css({
 		[theme.breakpoints.up('md')]: {
 			display: 'flex',
@@ -35,7 +28,7 @@ const avatarContainerStyle = (theme: any) =>
 		},
 	});
 
-const headlineStyle = (theme: any) =>
+const headlineStyle = (theme: Theme) =>
 	css({
 		fontWeight: 300,
 		[theme.breakpoints.down('md')]: {
@@ -43,7 +36,7 @@ const headlineStyle = (theme: any) =>
 		},
 	});
 
-const avatarStyle = (theme: any) =>
+const avatarStyle = (theme: Theme) =>
 	css({
 		width: 300,
 		height: 300,
@@ -60,7 +53,7 @@ const Greeting: FC = () => {
 	return (
 		<Container css={containerStyle}>
 			<Grid container rowSpacing={8}>
-				<Grid item xs={12} md="auto">
+				<Grid size={{ xs: 12, md: 'auto' }}>
 					<Typography variant="h6" color="primary" css={textStyle}>
 						Hi, my name is
 					</Typography>
@@ -69,7 +62,7 @@ const Greeting: FC = () => {
 					</Typography>
 					<Typography
 						variant="h3"
-						color="text.secondary"
+						color="textSecondary"
 						css={textStyle}
 						sx={{ fontWeight: 300 }}
 					>
@@ -78,28 +71,29 @@ const Greeting: FC = () => {
 
 					<Typography
 						variant="h6"
-						color="text.secondary"
+						color="textSecondary"
 						css={[textStyle, headlineStyle]}
-						maxWidth={500}
+						sx={{ maxWidth: 500 }}
 					>
 						I&apos;m a full-stack engineer and team lead, mostly on
 						the backend these days: designing systems, scaling them,
 						and seeing them through to production.
 					</Typography>
 
-					<Hidden mdDown>
-						<Button
-							variant="outlined"
-							size="large"
-							sx={{ marginTop: 3 }}
-							onClick={() => scrollToSection('Contact')}
-						>
-							Get in touch
-						</Button>
-					</Hidden>
+					<Button
+						variant="outlined"
+						size="large"
+						sx={{
+							marginTop: 3,
+							display: { xs: 'none', md: 'inline-flex' },
+						}}
+						onClick={() => scrollToSection('Contact')}
+					>
+						Get in touch
+					</Button>
 				</Grid>
 
-				<Grid item xs={12} md css={avatarContainerStyle}>
+				<Grid size={{ xs: 12, md: 'grow' }} css={avatarContainerStyle}>
 					<Avatar
 						alt="Krisztián Patakfalvi"
 						src={`${window.location.origin}/android-chrome-512x512.png`}

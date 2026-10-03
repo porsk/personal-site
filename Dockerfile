@@ -1,21 +1,18 @@
 # build environment
-FROM node:16.13.1-alpine3.14 as build
-
-ENV NODE_ENV=production
-ENV DISABLE_ESLINT_PLUGIN=true
-ENV GENERATE_SOURCEMAP=false
+FROM node:24-alpine AS build
 
 WORKDIR /app
 
-COPY ./package*.json ./
+COPY package*.json ./
 RUN npm ci
 
-COPY ./ ./
-
+COPY . .
 RUN npm run build
 
 # production environment
-FROM nginx:1.20.2
+FROM nginx:stable-alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/build /www/pkrisztian
+COPY --from=build /app/dist /www/pkrisztian
+
+EXPOSE 80

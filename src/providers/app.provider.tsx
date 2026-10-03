@@ -1,71 +1,56 @@
-import { useState, useMemo, createContext, FC } from 'react';
-import { useCookies } from 'react-cookie';
-import { useMediaQuery } from '@mui/material';
+import { useState, useMemo, type FC, type ReactNode } from 'react';
+import { useMediaQuery, type PaletteMode } from '@mui/material';
 
-type PaletteMode = 'light' | 'dark';
-type AppContextType = {
-	theme: {
-		mode: PaletteMode;
-		toggleMode: () => void;
-		setMode: (mode: PaletteMode) => void;
-		isDark: () => boolean;
-	};
+import { AppContext } from './app.context';
+
+const PALETTE_MODE_STORAGE_KEY = 'paletteMode';
+
+// localStorage can throw (private mode, blocked storage), so fail quietly
+const readStoredMode = (): PaletteMode | null => {
+	try {
+		const value = localStorage.getItem(PALETTE_MODE_STORAGE_KEY);
+		return value === 'light' || value === 'dark' ? value : null;
+	} catch {
+		return null;
+	}
 };
 
-const PALETTE_MODE_COOKIE_NAME = 'paletteMode';
+const storeMode = (mode: PaletteMode) => {
+	try {
+		localStorage.setItem(PALETTE_MODE_STORAGE_KEY, mode);
+	} catch {
+		// ignore
+	}
+};
 
-export const AppContext = createContext<AppContextType>({
-	theme: {
-		mode: 'dark',
-		toggleMode: () => {},
-		setMode: () => {},
-		isDark: () => true,
-	},
-});
-
-export const AppProvider: FC<{ children: React.ReactNode }> = ({
-	children,
-}) => {
-	const [cookies, setCookie] = useCookies([PALETTE_MODE_COOKIE_NAME]);
-	// using prefers-color-scheme query for getting user specified a preference
+export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
+	// the user's own choice wins, otherwise follow the OS setting
 	// See: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
-	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-	const getDefaultMode = (
-		cookieMode: PaletteMode,
-		prefersDark: boolean
-	): PaletteMode => {
-		if (cookieMode) return cookieMode;
-
-		return prefersDark ? 'dark' : 'light';
-	};
-
-	const [currentMode, setCurrentMode] = useState<PaletteMode>(
-		getDefaultMode(cookies[PALETTE_MODE_COOKIE_NAME], prefersDarkMode)
+	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
+		noSsr: true,
+	});
+	const [storedMode, setStoredMode] = useState<PaletteMode | null>(
+		readStoredMode
 	);
 
-	const setMode = (mode: PaletteMode) => {
-		setCurrentMode(mode);
-		setCookie(PALETTE_MODE_COOKIE_NAME, mode);
-	};
+	const mode: PaletteMode =
+		storedMode ?? (prefersDarkMode ? 'dark' : 'light');
 
-	const toggleMode = () => {
-		setMode(currentMode === 'light' ? 'dark' : 'light');
-	};
+	const value = useMemo(() => {
+		const setMode = (newMode: PaletteMode) => {
+			setStoredMode(newMode);
+			storeMode(newMode);
+		};
 
-	const isDark = (): boolean => currentMode === 'dark';
-
-	const value = useMemo(
-		() => ({
+		return {
 			theme: {
-				mode: currentMode,
-				toggleMode,
+				mode,
 				setMode,
-				isDark,
+				toggleMode: () => setMode(mode === 'light' ? 'dark' : 'light'),
+				isDark: () => mode === 'dark',
 			},
-		}),
-		[currentMode]
-	);
+		};
+	}, [mode]);
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

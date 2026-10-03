@@ -4,7 +4,7 @@ import { IconButton, Tooltip } from '@mui/material';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 
-import { AppContext } from '../providers/app.provider';
+import { AppContext } from '../providers/app.context';
 
 const DarkModeSwitch: FC = () => {
 	const {
