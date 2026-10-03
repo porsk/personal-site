@@ -5,59 +5,59 @@ import Section from './section.component';
 const About = () => (
 	<Section title="About me" id="about">
 		<Typography color="text.secondary">
-			Hello! 👋 My name is Krisztián Patakfalvi, feel free to
-			<strong> call me Chris</strong>. I&apos;ve always been a great
-			problem solver, a traveler, and a technophile obsessed with the
-			latest devices. Today, I&apos;m working as a{' '}
-			<strong>Full-Stack Developer through Toptal</strong>, while
-			traveling the world as a <strong>digital nomad</strong>, following
-			and fulfilling my passions and dreams.
+			Hi! 👋 I&apos;m Krisztián, but feel free to{' '}
+			<strong>call me Chris</strong>. I&apos;ve always liked solving
+			problems, travelling, and getting my hands on the latest gadgets.
+			These days I&apos;m a <strong>Lead Software Engineer at ADP</strong>
+			, still with the same team I joined in 2022, back when we were a
+			startup called Sora. I&apos;m a former digital nomad, but still
+			following my passions and chasing my dreams.
 		</Typography>
 
 		<br />
 
 		<Typography color="text.secondary">
-			What can a <q>Full Stack Developer</q> do, you might ask? I can
-			craft a website from nothing into existence, fully formed. I do not
-			use tricks, nor is this magic. I can build systems that hide in the
-			background, serve websites, manage user interactions, deal with big
-			data or IoT events.{' '}
-			<strong>I can plan, design, build, launch, and maintain </strong>
-			all these by myself —
-			<strong> did I mention that I do DevOps too?</strong>
+			Over the last few years I&apos;ve moved more towards{' '}
+			<strong>backend work and technical leadership</strong>. Most of my
+			time goes into planning, architecture and solution design, with a
+			focus on <strong>scalability and modernisation</strong>. I work
+			closely with principal engineers and other leads, and I{' '}
+			<strong>own larger initiatives from start to finish</strong>, often
+			together with other developers. Right now I&apos;m leading our move
+			to an <strong>event-driven system</strong>, using change data
+			capture with Debezium and Kafka. AI tools are a big part of how we
+			work too, from writing code to testing and documentation.
 		</Typography>
 
 		<br />
 
 		<Typography color="text.secondary">
-			I started learning to code when I was a teenager. I still remember
-			sitting in front of the computer, making it print{' '}
-			<q>Hello Krisztián</q> for the very first time. As I learned new
-			things it was almost magic, being able to get the computer to do
-			whatever I wanted, just by typing in the right <q>spells</q>. Since
-			then, I&apos;ve worked on countless challenging projects and have
-			been involved in the fields of{' '}
-			<strong>telecommunication, safety, IoT, and mobile industry</strong>
-			, handling{' '}
+			I started coding as a teenager. I still remember getting the
+			computer to print <q>Hello Krisztián</q> for the first time; it felt
+			a bit like magic. Since then I&apos;ve worked in{' '}
+			<strong>telecom, safety, IoT, mobile and HR tech</strong>, covering
+			everything from{' '}
 			<strong>
-				requirements engineering, solution architecting, DevOps,
-				back-end and front-end development
+				requirements and architecture to backend, frontend and DevOps
 			</strong>
-			.
+			. I don&apos;t do DevOps day to day anymore, but I&apos;m at home
+			with <strong>AWS, Docker and Kubernetes</strong>, keep my AWS
+			certification up to date, and have been running my own homelab since
+			my first Raspberry Pi, about ten years ago.
 		</Typography>
 
 		<br />
 
 		<Typography color="text.secondary">
-			I consider myself a well-organized person, a problem solver with
-			high attention to details.{' '}
+			I&apos;m organised and detail-oriented, and I like to understand a
+			problem properly before solving it. Away from the screen,
+			you&apos;ll find me{' '}
 			<strong>
-				Fan of photographing, outdoor activities, traveling, music and
-				board games.
-			</strong>{' '}
-			When I&apos;m not in front of a computer screen, I&apos;m probably
-			hanging out with my love and friends or crossing off another item on
-			my bucket list.
+				taking photos, outdoors, travelling, listening to music or
+				playing board games
+			</strong>
+			, usually with my wife and friends, or ticking something off my
+			bucket list.
 		</Typography>
 	</Section>
 );

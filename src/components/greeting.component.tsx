@@ -82,9 +82,9 @@ const Greeting: FC = () => {
 						css={[textStyle, headlineStyle]}
 						maxWidth={500}
 					>
-						I&apos;m a Full Stack JavaScript Developer, eager to
-						solve creative problems using cutting edge technologies,
-						and move big ideas from design to implementation.
+						I&apos;m a full-stack engineer and team lead, mostly on
+						the backend these days: designing systems, scaling them,
+						and seeing them through to production.
 					</Typography>
 
 					<Hidden mdDown>
