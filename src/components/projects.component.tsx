@@ -67,8 +67,16 @@ const Projects = () => (
 
 			<Project
 				name="Homelab"
-				description="A small self-hosted setup at home where I run my own services and try out infrastructure ideas outside of work."
-				tags={['Docker', 'Linux', 'Self-hosting', 'Networking']}
+				description="What started with a couple of Raspberry Pis about ten years ago has grown into a proper setup: a NAS with redundant off-site backups, a home server, and around 15 self-hosted services, including Plex, Immich, Audiobookshelf, Wealthfolio, home automation, a VPN and a few sites for friends. Everything runs behind Traefik and Cloudflare on my own domains, and the backup strategy covers every phone and laptop in the household too."
+				tags={[
+					'Docker',
+					'Linux',
+					'NAS',
+					'Traefik',
+					'Cloudflare',
+					'Networking',
+					'Backups',
+				]}
 			/>
 
 			<Project

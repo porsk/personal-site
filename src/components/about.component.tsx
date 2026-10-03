@@ -42,7 +42,8 @@ const About = () => (
 			</strong>
 			. I don&apos;t do DevOps day to day anymore, but I&apos;m at home
 			with <strong>AWS, Docker and Kubernetes</strong>, keep my AWS
-			certification up to date, and run a small homelab for fun.
+			certification up to date, and have been running my own homelab since
+			my first Raspberry Pi, about ten years ago.
 		</Typography>
 
 		<br />
