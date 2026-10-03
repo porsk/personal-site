@@ -9,10 +9,10 @@ import {
 	ListItemText,
 	ListItemIcon,
 	Link,
-	Button,
+	// Button,
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Section from './section.component';
 
 const periodContainerStyle = () =>
@@ -21,12 +21,12 @@ const periodContainerStyle = () =>
 		justifyContent: 'flex-end',
 	});
 
-const resumeContainerStyle = (theme: any) =>
-	css({
-		[theme.breakpoints.down('sm')]: {
-			textAlign: 'center',
-		},
-	});
+// const resumeContainerStyle = (theme: any) =>
+// 	css({
+// 		[theme.breakpoints.down('sm')]: {
+// 			textAlign: 'center',
+// 		},
+// 	});
 
 const Experience: FC<{
 	employer: string;
@@ -83,14 +83,42 @@ const Experiences = () => (
 	<Section title="Experience" id="experience">
 		<Grid container rowSpacing={3}>
 			<Experience
-				employer="Sora (through Toptal)"
+				employer="ADP"
+				url="https://www.adp.com/"
+				title="Lead Software Engineer | Tech & Scale"
+				period="Mar 2025 - Present"
+				content={[
+					'Set the technical direction for scaling a workflow automation platform that runs employee lifecycle processes for HR and payroll.',
+					'Leading the move to an event-driven architecture: change data capture with Debezium and Kafka (MSK), plus the refactoring that comes with it.',
+					'Own epics end to end, from planning and solution design through delivery, often leading a group of developers on the larger ones.',
+					'Work with principal engineers and other leads on reliability, performance and security, including database sharding, regular load testing and newer deployment approaches.',
+					'Use AI tooling across the whole process, from development to testing and documentation.',
+				]}
+			/>
+
+			<Experience
+				employer="ADP"
+				url="https://www.adp.com/"
+				title="Senior Software Engineer"
+				period="Aug 2023 - Mar 2025"
+				content={[
+					'Joined ADP with the whole Sora team and product after the acquisition.',
+					'Built and maintained a workflow orchestration platform that automates onboarding, offboarding, parental leave and other employee lifecycle processes.',
+					'Handled the full cycle, from feature design and implementation to performance tuning and architectural changes.',
+					'Contributed to planning, coordinated larger initiatives, and kept improving scalability and reliability.',
+					'Worked mainly with Node.js, TypeScript, PostgreSQL, Redis and AWS (ECS, Lambda, SQS, EventBridge, Aurora).',
+				]}
+			/>
+
+			<Experience
+				employer="Sora"
 				url="https://www.sora.co/"
 				title="Full Stack Developer | Integration Engineer"
-				period="April 2022 - Present"
+				period="Apr 2022 - Aug 2023"
 				content={[
-					'Integration of new 3rd party systems into the application (Twilio, Teams, Checkr and others).',
-					'Improvement and maintenance of existing integrations.',
-					'Development of UI and backend features and improvements.',
+					'Integrated third-party systems into the product, including Twilio, Microsoft Teams and Checkr.',
+					'Maintained and improved existing integrations and data flows.',
+					'Built features and improvements across the UI and backend.',
 				]}
 			/>
 
@@ -98,24 +126,26 @@ const Experiences = () => (
 				employer="Codespring"
 				url="https://www.codespring.ro"
 				title="Full Stack Developer | DevOps Engineer"
-				period="Sep 2018 - June 2022"
+				period="Sep 2018 - Jun 2022"
 				content={[
-					'Development of web applications, backends, microservice systems dealing with IoT events and big data, native Android applications.',
-					'Work with a variety of different languages, platforms, frameworks, and tools such as Node, React, Java, Spring, Python, Kafka TimescaleDB, MongoDB, PostgreSQL, Kubernetes, Rancher.',
-					'Mentoring bachelor students during internship.',
+					'Built web apps, Android apps and microservice backends handling IoT event streams and large time-series datasets.',
+					'Worked across Node.js, React, Java/Spring and Python, with Kafka, TimescaleDB, MongoDB and PostgreSQL.',
+					'Ran deployments on Kubernetes and Rancher, and set up CI/CD pipelines.',
+					'Mentored bachelor students during their internships.',
 				]}
 			/>
 
 			<Experience
 				employer="Nokia"
 				url="https://www.nokia.com"
-				title="Intern - R&amp;D Engineer"
+				title="R&D Engineer Intern"
 				period="Jul - Sep 2017"
 				content={[
-					'Worked on a web based tool for speeding up the configuration of the telecommunication servers at Nokia using JavaScript, HTML and CSS.',
+					"Built a web tool that sped up configuration of Nokia's telecom servers.",
 				]}
 			/>
 
+			{/* Resume is outdated, hidden for now. Uncomment (with the imports and style above) to bring it back.
 			<Grid item xs={12} css={resumeContainerStyle}>
 				<Button
 					variant="outlined"
@@ -129,6 +159,7 @@ const Experiences = () => (
 					View my Resume
 				</Button>
 			</Grid>
+			*/}
 		</Grid>
 	</Section>
 );

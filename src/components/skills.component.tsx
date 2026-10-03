@@ -34,27 +34,38 @@ const Skills = () => (
 		<Grid container rowSpacing={3}>
 			<SkillList
 				title="Languages"
-				items={['JavaScript', 'Java', 'Python']}
+				items={['TypeScript', 'JavaScript', 'SQL', 'Python']}
 			/>
 
 			<SkillList
-				title="Frameworks"
-				items={['React.js', 'Node.js', 'Express', 'Spring', 'Next.js']}
-			/>
-
-			<SkillList
-				title="DevOps"
-				items={['Docker', 'Kubernetes', 'Helm', 'Rancher', 'CI/CD']}
-			/>
-
-			<SkillList
-				title="Misc"
+				title="Backend & Frontend"
 				items={[
-					' GitLab & GitHub',
-					'Kafka',
-					'MongoDB',
-					'PostgreSQL',
-					'TimescaleDB',
+					'Node.js',
+					'React.js',
+					'REST & GraphQL APIs',
+					'Event-driven design',
+					'3rd party integrations',
+				]}
+			/>
+
+			<SkillList
+				title="Data"
+				items={[
+					'PostgreSQL & Aurora',
+					'Redis',
+					'Kafka & Debezium (CDC)',
+					'Elasticsearch',
+					'ETL',
+				]}
+			/>
+
+			<SkillList
+				title="Cloud & Tooling"
+				items={[
+					'AWS (ECS, Lambda, SQS, MSK…)',
+					'Docker & Kubernetes',
+					'Splunk & Dynatrace',
+					'AI-assisted development',
 				]}
 			/>
 		</Grid>

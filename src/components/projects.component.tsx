@@ -4,22 +4,26 @@ import Section from './section.component';
 
 const Project: FC<{
 	name: string;
-	url: string;
+	url?: string;
 	description: string;
 	tags: string[];
 }> = ({ name, url, description, tags }) => (
 	<Grid item xs={12}>
 		<Grid container rowSpacing={2}>
 			<Grid item xs={12}>
-				<Link
-					variant="h6"
-					href={url}
-					color="text.primary"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					{name}
-				</Link>
+				{url ? (
+					<Link
+						variant="h6"
+						href={url}
+						color="text.primary"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{name}
+					</Link>
+				) : (
+					<Typography variant="h6">{name}</Typography>
+				)}
 			</Grid>
 
 			<Grid item xs={12}>
@@ -51,20 +55,26 @@ const Projects = () => (
 			<Project
 				name="Personal site"
 				url="https://pkrisztian.com"
-				description="Portfolio site serving as a modern-day CV designed and coded from scratch to showcase my skills and past work."
+				description="This site. A modern take on a CV, designed and built from scratch."
 				tags={[
-					'Node.js',
 					'React.js',
-					'Express',
 					'TypeScript',
 					'Material UI',
+					'Docker',
+					'Nginx',
 				]}
+			/>
+
+			<Project
+				name="Homelab"
+				description="A small self-hosted setup at home where I run my own services and try out infrastructure ideas outside of work."
+				tags={['Docker', 'Linux', 'Self-hosting', 'Networking']}
 			/>
 
 			<Project
 				name="LocalHandy"
 				url="https://localhandy.ro"
-				description="Web application for finding professional/handyman for certain jobs on demand. The professionals have the possibility to create a detailed profile, meanwhile the users and guests can search among the masters."
+				description="A web app for finding local tradespeople and handymen on demand. Professionals create detailed profiles, and anyone can search and browse them to find the right person for the job."
 				tags={[
 					'Node.js',
 					'React.js',
@@ -80,7 +90,7 @@ const Projects = () => (
 			<Project
 				name="Daily Challenge"
 				url="https://youtu.be/HtnEH7AJaCQ"
-				description="Cross-platform mobile application for challenge management in which participants have to take certain time-specific steps, like reading a book every week or doing specific exercises for thirty days. The project aims to provide a unified interface for users where a multitude of challenges are available for participation."
+				description="A cross-platform mobile app for joining time-based challenges, like reading a book every week or doing a set of exercises for thirty days, with all challenges available in one place."
 				tags={[
 					'Node.js',
 					'Express',
