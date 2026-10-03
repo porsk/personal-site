@@ -4,7 +4,7 @@ import Section from './section.component';
 
 const About = () => (
 	<Section title="About me" id="about">
-		<Typography color="text.secondary">
+		<Typography color="textSecondary">
 			Hi! 👋 I&apos;m Krisztián, but feel free to{' '}
 			<strong>call me Chris</strong>. I&apos;ve always liked solving
 			problems, travelling, and getting my hands on the latest gadgets.
@@ -16,7 +16,7 @@ const About = () => (
 
 		<br />
 
-		<Typography color="text.secondary">
+		<Typography color="textSecondary">
 			Over the last few years I&apos;ve moved more towards{' '}
 			<strong>backend work and technical leadership</strong>. Most of my
 			time goes into planning, architecture and solution design, with a
@@ -31,7 +31,7 @@ const About = () => (
 
 		<br />
 
-		<Typography color="text.secondary">
+		<Typography color="textSecondary">
 			I started coding as a teenager. I still remember getting the
 			computer to print <q>Hello Krisztián</q> for the first time; it felt
 			a bit like magic. Since then I&apos;ve worked in{' '}
@@ -48,7 +48,7 @@ const About = () => (
 
 		<br />
 
-		<Typography color="text.secondary">
+		<Typography color="textSecondary">
 			I&apos;m organised and detail-oriented, and I like to understand a
 			problem properly before solving it. Away from the screen,
 			you&apos;ll find me{' '}

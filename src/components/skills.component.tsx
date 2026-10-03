@@ -1,10 +1,10 @@
-/** @jsxImportSource @emotion/react */
+import type { Theme } from '@mui/material/styles';
 import { css } from '@emotion/react';
 import { FC } from 'react';
 import { Grid, Typography, Stack } from '@mui/material';
 import Section from './section.component';
 
-const skillStackStyle = (theme: any) =>
+const skillStackStyle = (theme: Theme) =>
 	css({
 		[theme.breakpoints.down('sm')]: {
 			textAlign: 'center',
@@ -15,13 +15,13 @@ const SkillList: FC<{ title: string; items: string[] }> = ({
 	title,
 	items,
 }) => (
-	<Grid item xs={6} sm={3}>
+	<Grid size={{ xs: 6, sm: 3 }}>
 		<Stack css={skillStackStyle}>
 			<Typography variant="button" sx={{ marginBottom: 1 }}>
 				{title}
 			</Typography>
 			{items.map((item: string) => (
-				<Typography key={item} color="text.secondary">
+				<Typography key={item} color="textSecondary">
 					{item}
 				</Typography>
 			))}

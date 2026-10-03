@@ -8,14 +8,14 @@ const Project: FC<{
 	description: string;
 	tags: string[];
 }> = ({ name, url, description, tags }) => (
-	<Grid item xs={12}>
+	<Grid size={12}>
 		<Grid container rowSpacing={2}>
-			<Grid item xs={12}>
+			<Grid size={12}>
 				{url ? (
 					<Link
 						variant="h6"
 						href={url}
-						color="text.primary"
+						color="textPrimary"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -26,16 +26,16 @@ const Project: FC<{
 				)}
 			</Grid>
 
-			<Grid item xs={12}>
-				<Typography color="text.secondary" variant="body1">
+			<Grid size={12}>
+				<Typography color="textSecondary" variant="body1">
 					{description}
 				</Typography>
 			</Grid>
 
-			<Grid item xs={12}>
+			<Grid size={12}>
 				<Grid container spacing={1}>
 					{tags.map((tag) => (
-						<Grid item key={tag}>
+						<Grid key={tag}>
 							<Chip
 								label={tag}
 								variant="outlined"

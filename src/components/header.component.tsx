@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { FC } from 'react';
 import {
@@ -8,7 +7,6 @@ import {
 	Stack,
 	Button,
 	Divider,
-	Hidden,
 	useScrollTrigger,
 } from '@mui/material';
 
@@ -19,13 +17,21 @@ const stackStyle = css({
 	marginLeft: 'auto',
 });
 
-const MenuButton: FC<{ title: string }> = ({ title }) => {
+const MenuButton: FC<{ title: string; hideOnMobile?: boolean }> = ({
+	title,
+	hideOnMobile = false,
+}) => {
 	const { scrollToSection } = useScrollToSection();
 
 	return (
 		<Button
 			color="inherit"
-			sx={{ textTransform: 'none' }}
+			sx={{
+				textTransform: 'none',
+				...(hideOnMobile && {
+					display: { xs: 'none', sm: 'inline-flex' },
+				}),
+			}}
 			onClick={() => scrollToSection(title)}
 		>
 			{title}
@@ -48,14 +54,10 @@ const Header: FC = () => {
 					<Toolbar>
 						<Stack direction="row" spacing={2} css={stackStyle}>
 							<MenuButton title="About" />
-							<Hidden smDown>
-								<MenuButton title="Skills" />
-							</Hidden>
+							<MenuButton title="Skills" hideOnMobile />
 							<MenuButton title="Experience" />
 							<MenuButton title="Projects" />
-							<Hidden smDown>
-								<MenuButton title="Contact" />
-							</Hidden>
+							<MenuButton title="Contact" hideOnMobile />
 
 							<Divider orientation="vertical" flexItem />
 

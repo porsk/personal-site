@@ -11,7 +11,7 @@ const Contact = () => (
 		id="contact"
 	>
 		<Grid container rowSpacing={4}>
-			<Grid item xs={12}>
+			<Grid size={12}>
 				<Typography
 					variant="h3"
 					sx={{ fontWeight: 400, marginBottom: 1 }}
@@ -19,12 +19,12 @@ const Contact = () => (
 					Get in touch
 				</Typography>
 
-				<Typography variant="h5" color="text.secondary">
+				<Typography variant="h5" color="textSecondary">
 					If you fancy a chat feel free to drop me a line.
 				</Typography>
 			</Grid>
 
-			<Grid item xs={12}>
+			<Grid size={12}>
 				<Button
 					variant="outlined"
 					size="large"
@@ -36,7 +36,7 @@ const Contact = () => (
 				</Button>
 			</Grid>
 
-			<Grid item xs={12}>
+			<Grid size={12}>
 				<Typography variant="h5" color="primary">
 					Stay bold &amp;
 				</Typography>

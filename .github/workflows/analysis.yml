@@ -3,25 +3,26 @@ name: Analysis CI
 on: push
 
 jobs:
-    lint:
+    lint-and-build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v7
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+                  cache: npm
 
             - name: Install Node modules
               run: npm ci
 
             - name: Run ESLint
               run: npm run lint
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v7
 
-            - name: Install Node modules
-              run: npm ci
+            - name: Check formatting
+              run: npx prettier --check .
 
-            - name: Build React.js project
+            - name: Type-check and build
               run: npm run build

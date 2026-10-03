@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// import type { Theme } from '@mui/material/styles';
 import { css } from '@emotion/react';
 import { FC } from 'react';
 import {
@@ -21,7 +21,7 @@ const periodContainerStyle = () =>
 		justifyContent: 'flex-end',
 	});
 
-// const resumeContainerStyle = (theme: any) =>
+// const resumeContainerStyle = (theme: Theme) =>
 // 	css({
 // 		[theme.breakpoints.down('sm')]: {
 // 			textAlign: 'center',
@@ -35,29 +35,29 @@ const Experience: FC<{
 	period: string;
 	content: string[];
 }> = ({ employer, url, title, period, content }) => (
-	<Grid item xs={12}>
+	<Grid size={12}>
 		<Grid container>
-			<Grid item xs={6}>
+			<Grid size={6}>
 				<Link
 					variant="h6"
 					href={url}
-					color="text.primary"
+					color="textPrimary"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					{employer}
 				</Link>
 
-				<Typography variant="subtitle2" color="text.secondary">
+				<Typography variant="subtitle2" color="textSecondary">
 					{title}
 				</Typography>
 			</Grid>
-			<Grid item xs={6} css={periodContainerStyle}>
-				<Typography variant="subtitle2" color="text.secondary">
+			<Grid size={6} css={periodContainerStyle}>
+				<Typography variant="subtitle2" color="textSecondary">
 					{period}
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+			<Grid size={12}>
 				<List dense>
 					{content.map((line) => (
 						<ListItem key={line}>
@@ -66,9 +66,11 @@ const Experience: FC<{
 							</ListItemIcon>
 							<ListItemText
 								primary={line}
-								primaryTypographyProps={{
-									color: 'text.secondary',
-									variant: 'body1',
+								slotProps={{
+									primary: {
+										color: 'textSecondary',
+										variant: 'body1',
+									},
 								}}
 							/>
 						</ListItem>
@@ -146,7 +148,7 @@ const Experiences = () => (
 			/>
 
 			{/* Resume is outdated, hidden for now. Uncomment (with the imports and style above) to bring it back.
-			<Grid item xs={12} css={resumeContainerStyle}>
+			<Grid size={12} css={resumeContainerStyle}>
 				<Button
 					variant="outlined"
 					endIcon={<ChevronRightIcon />}
